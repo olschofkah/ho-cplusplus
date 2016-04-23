@@ -4,6 +4,8 @@
 #include "stdafx.h"
 #include "ZeroReturnHelper.h"
 
+#define ALLOW_PRINT
+
 
 
 int doubleNumber(int a)
@@ -15,9 +17,14 @@ int main()
 {
 	cout << "Hello Worldz" << endl;
 
-	int input = 0;
-	cin >> input;
-	cout << doubleNumber(input) << endl;
+#ifdef ALLOW_PRINT
+	cout << "It's ALIVE" << endl;
+#endif
+
+
+	//int input = 0;
+	//cin >> input;
+	//cout << doubleNumber(input) << endl;
 
 	return returnZero();
 }

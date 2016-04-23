@@ -3,7 +3,7 @@
 // are changed infrequently
 //
 
-#pragma once
+#pragma once // same as a header guard of #ifndef name and #endif around an #include.  
 
 #include "targetver.h"
 
@@ -14,7 +14,5 @@
 
 using namespace std;
 
-int returnZero();
+int returnZero(); // makes the main compile since it looks in order of function declaration.
 
-
-// TODO: reference additional headers your program requires here
