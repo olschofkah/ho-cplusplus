@@ -7,12 +7,17 @@
 
 #include "targetver.h"
 
+#include <cstdint> // for C++11 data types for fixed sizes. 
+#include <iomanip> // for std::setprecision()
 #include <stdio.h>
 #include <tchar.h>
-#include <iostream>
+#include <iostream> // for input / output
 #include <string>
+#include "ZeroReturnHelper.h"
+#include "DataTypeSize.h"
 
-using namespace std;
+#include "PrimeTest.h"
+
 
 int returnZero(); // makes the main compile since it looks in order of function declaration.
 

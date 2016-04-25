@@ -13,6 +13,12 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Source Files\CodingSamples">
+      <UniqueIdentifier>{bfdaed6f-3331-4cb0-80f0-dda272a08f6a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\CoingSamples">
+      <UniqueIdentifier>{855352ef-09e5-42c7-8e07-718abbb25b09}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -27,6 +33,12 @@
     <ClInclude Include="ZeroReturnHelper.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="DataTypeSize.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PrimeTest.h">
+      <Filter>Header Files\CoingSamples</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -37,6 +49,12 @@
     </ClCompile>
     <ClCompile Include="ZeroReturnHelper.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DataTypeSize.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PrimeTest.cpp">
+      <Filter>Source Files\CodingSamples</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
