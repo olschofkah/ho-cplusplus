@@ -30,10 +30,10 @@ int main()
 	std::cout << std::setprecision(30); // show 30 digits when printing
 	std::cout << std::boolalpha; // print bools as true or false
 
-	double_t	d1{5e26}; // can assign floating point numders directly in scientific notation. 
-	cout << d1 << endl;	
-	
-	d1 = 2.5; // can assign floating point numders directly in scientific notation. 
+	double_t	d1{ 5e26 }; // can assign floating point numbers directly in scientific notation. 
+	cout << d1 << endl;
+
+	d1 = 2.5; // can assign floating point numbers directly in scientific notation. 
 	cout << d1 << endl;
 
 	//int input = 0;
@@ -43,13 +43,36 @@ int main()
 	DataTypeSize dts{};
 	dts.print();
 
+	/**
 	int primeInput;
 	cout << "Please enter a number to see if it is prime: ";
 	cin >> primeInput;
 
+
 	bool primeResult{ PrimeTest::isPrime(primeInput) };
+	*/
+
+	bool primeResult{ PrimeTest::isPrime(25) };
 
 	cout << "Your number is prime? : " << primeResult << endl;
+
+	int xOct = 012; // 0 before the number means this is octal
+	const int xHex = 0xFF; // 0x is for hex 255 ... it's also a constant
+	int xBin = 0b1010; // assign binary 0000 1010 to the variable
+
+
+
+	double heightAfter100 = GravityBallDrop::calcHeightAtTime(3, 100);
+	cout << heightAfter100 << endl;
+
+	string stringA{ "00100010" };
+	string stringB{ "01101111" };
+	string ouputSumString = BinaryPlay::addBinaryStrings(stringA, stringB);
+
+	cout << ouputSumString << endl;
+
+	int pops = BinaryPlay::popCount(BinaryPlay::convertBinaryStringToInt(ouputSumString));
+	cout << "Pop Count: " << pops << endl;
 
 	return returnZero();
 }

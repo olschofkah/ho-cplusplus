@@ -39,6 +39,18 @@
     <ClInclude Include="PrimeTest.h">
       <Filter>Header Files\CoingSamples</Filter>
     </ClInclude>
+    <ClInclude Include="Constants.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GravityBallDrop.h">
+      <Filter>Header Files\CoingSamples</Filter>
+    </ClInclude>
+    <ClInclude Include="PowerCalculator.h">
+      <Filter>Header Files\CoingSamples</Filter>
+    </ClInclude>
+    <ClInclude Include="BinaryPlay.h">
+      <Filter>Header Files\CoingSamples</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -54,6 +66,15 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="PrimeTest.cpp">
+      <Filter>Source Files\CodingSamples</Filter>
+    </ClCompile>
+    <ClCompile Include="GravityBallDrop.cpp">
+      <Filter>Source Files\CodingSamples</Filter>
+    </ClCompile>
+    <ClCompile Include="PowerCalculator.cpp">
+      <Filter>Source Files\CodingSamples</Filter>
+    </ClCompile>
+    <ClCompile Include="BinaryPlay.cpp">
       <Filter>Source Files\CodingSamples</Filter>
     </ClCompile>
   </ItemGroup>

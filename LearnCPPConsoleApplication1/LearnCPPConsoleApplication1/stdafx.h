@@ -17,6 +17,8 @@
 #include "DataTypeSize.h"
 
 #include "PrimeTest.h"
+#include "GravityBallDrop.h"
+#include "BinaryPlay.h"
 
 
 int returnZero(); // makes the main compile since it looks in order of function declaration.

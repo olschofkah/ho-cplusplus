@@ -145,15 +145,22 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="BinaryPlay.h" />
     <ClInclude Include="DataTypeSize.h" />
+    <ClInclude Include="Constants.h" />
+    <ClInclude Include="GravityBallDrop.h" />
+    <ClInclude Include="PowerCalculator.h" />
     <ClInclude Include="PrimeTest.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
     <ClInclude Include="ZeroReturnHelper.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="BinaryPlay.cpp" />
     <ClCompile Include="DataTypeSize.cpp" />
+    <ClCompile Include="GravityBallDrop.cpp" />
     <ClCompile Include="LearnCPPConsoleApplication1.cpp" />
+    <ClCompile Include="PowerCalculator.cpp" />
     <ClCompile Include="PrimeTest.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
