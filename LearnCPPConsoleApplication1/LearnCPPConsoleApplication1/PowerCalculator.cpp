@@ -12,15 +12,25 @@ PowerCalculator::~PowerCalculator()
 }
 
 
-int PowerCalculator::powByRecursion(int base, int exp)
+double PowerCalculator::powByRecursion(int base, int exp) // return type of auto is not suggested but possible in C++14
 {
-	return exp == 0 ? 1 : (exp < 0 ? 1 / powByRecursion(base, -exp) : base * powByRecursion(base, --exp));
+	return exp == 0 ? 1 : (exp < 0 ? 1.0 / powByRecursion(base, -exp) : base * powByRecursion(base, --exp));
 }
 
 
-int PowerCalculator::powByLoop(int base, int exp)
+auto PowerCalculator::powByLoop(int base, int exp) -> double
 {
-	return 0;
+	auto result{ 1 };
+
+	if (exp < 0) {
+		return static_cast<double>(1) / powByLoop(base, -exp);
+	}
+
+	for (auto i = 1; i <= exp; i++) {
+		result *= base;
+	}
+
+	return result;
 }
 
 

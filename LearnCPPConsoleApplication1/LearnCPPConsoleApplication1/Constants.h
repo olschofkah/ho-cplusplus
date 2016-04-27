@@ -1,8 +1,20 @@
 #pragma once
 
-namespace constants
+// forward declaration and values defined in Constants.cpp to avoid recopying values based on each .h include. 
+namespace Constants
 {
-	const double pi{ 3.14159 };
-	const double avogadro{ 6.0221413e23 };
-	const double my_gravity{ 9.8 }; 
+	extern const double pi;
+	extern const double avogadro;
+	extern const double my_gravity;
 }
+
+enum class CupSizes
+{
+	A,
+	B,
+	C,
+	D,
+	DD,
+	DDD,
+	HHH
+};

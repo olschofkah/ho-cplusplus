@@ -157,6 +157,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="BinaryPlay.cpp" />
+    <ClCompile Include="Constants.cpp" />
     <ClCompile Include="DataTypeSize.cpp" />
     <ClCompile Include="GravityBallDrop.cpp" />
     <ClCompile Include="LearnCPPConsoleApplication1.cpp" />

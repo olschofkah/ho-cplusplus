@@ -29,6 +29,7 @@ int main()
 
 	std::cout << std::setprecision(30); // show 30 digits when printing
 	std::cout << std::boolalpha; // print bools as true or false
+	//std::cin.ignore(32767, '\n'); // use when reading in numbers for std::getline(cin,var) Rule: If reading numeric values with std::cin, it’s a good idea to remove the extraneous newline using std::cin.ignore().
 
 	double_t	d1{ 5e26 }; // can assign floating point numbers directly in scientific notation. 
 	cout << d1 << endl;
@@ -73,6 +74,18 @@ int main()
 
 	int pops = BinaryPlay::popCount(BinaryPlay::convertBinaryStringToInt(ouputSumString));
 	cout << "Pop Count: " << pops << endl;
+
+	if (CupSizes::A == CupSizes::D) { // enum class example
+		cout << "HRM?" << "\n";
+	}
+
+	typedef std::vector<std::pair<std::string, int> > pairlist_t;
+	using pairlist2_t = std::vector<std::pair<std::string, int> >; // C++11 syntax for typedef
+
+	Employee jimbob{ 2,3,150.25 };
+	jimbob.age = 3;
+
+	cout << jimbob.age << "\n";
 
 	return returnZero();
 }

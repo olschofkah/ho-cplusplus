@@ -13,13 +13,23 @@
 #include <tchar.h>
 #include <iostream> // for input / output
 #include <string>
+#include <vector>
+
 #include "ZeroReturnHelper.h"
 #include "DataTypeSize.h"
 
 #include "PrimeTest.h"
 #include "GravityBallDrop.h"
 #include "BinaryPlay.h"
+#include "Constants.h"
 
 
 int returnZero(); // makes the main compile since it looks in order of function declaration.
+
+struct Employee
+{
+	short id;
+	int age;
+	double wage;
+};
 

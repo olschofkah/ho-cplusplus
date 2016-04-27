@@ -24,7 +24,7 @@ std::string BinaryPlay::addBinaryStrings(std::string bInputOne, std::string bInp
 	return convertIntToBinaryString(intOne + intTwo);
 }
 
-int BinaryPlay::popCount(unsigned int input)
+ int  BinaryPlay::popCount(unsigned int input)
 {
 	int pop{ 0 };
 	while (input) {
