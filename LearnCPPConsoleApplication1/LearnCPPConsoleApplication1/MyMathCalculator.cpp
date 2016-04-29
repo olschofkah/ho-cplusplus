@@ -1,24 +1,23 @@
 #include "stdafx.h"
-#include "PowerCalculator.h"
 
 
-PowerCalculator::PowerCalculator()
+MyMathCalculator::MyMathCalculator()
 {
 }
 
 
-PowerCalculator::~PowerCalculator()
+MyMathCalculator::~MyMathCalculator()
 {
 }
 
 
-double PowerCalculator::powByRecursion(int base, int exp) // return type of auto is not suggested but possible in C++14
+double MyMathCalculator::powByRecursion(int base, int exp) // return type of auto is not suggested but possible in C++14
 {
 	return exp == 0 ? 1 : (exp < 0 ? 1.0 / powByRecursion(base, -exp) : base * powByRecursion(base, --exp));
 }
 
 
-auto PowerCalculator::powByLoop(int base, int exp) -> double
+auto MyMathCalculator::powByLoop(int base, int exp) -> double
 {
 	auto result{ 1 };
 
@@ -35,7 +34,7 @@ auto PowerCalculator::powByLoop(int base, int exp) -> double
 
 
 // https://en.wikipedia.org/wiki/Exponentiation_by_squaring
-int PowerCalculator::powByExponentialBySquaring(int base, int exp)
+int MyMathCalculator::powByExponentialBySquaring(int base, int exp)
 {
 	int result = 1;
 	while (exp) {
@@ -47,4 +46,10 @@ int PowerCalculator::powByExponentialBySquaring(int base, int exp)
 	}
 
 	return result;
+}
+
+// add a cached fib calc. 
+
+int MyMathCalculator::fib(unsigned int n) {
+	return n < 2 ? 1 : fib(n - 1) + fib(n - 2);
 }

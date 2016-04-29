@@ -45,10 +45,10 @@
     <ClInclude Include="GravityBallDrop.h">
       <Filter>Header Files\CoingSamples</Filter>
     </ClInclude>
-    <ClInclude Include="PowerCalculator.h">
+    <ClInclude Include="BinaryPlay.h">
       <Filter>Header Files\CoingSamples</Filter>
     </ClInclude>
-    <ClInclude Include="BinaryPlay.h">
+    <ClInclude Include="MyMathCalculator.h">
       <Filter>Header Files\CoingSamples</Filter>
     </ClInclude>
   </ItemGroup>
@@ -71,14 +71,14 @@
     <ClCompile Include="GravityBallDrop.cpp">
       <Filter>Source Files\CodingSamples</Filter>
     </ClCompile>
-    <ClCompile Include="PowerCalculator.cpp">
-      <Filter>Source Files\CodingSamples</Filter>
-    </ClCompile>
     <ClCompile Include="BinaryPlay.cpp">
       <Filter>Source Files\CodingSamples</Filter>
     </ClCompile>
     <ClCompile Include="Constants.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MyMathCalculator.cpp">
+      <Filter>Source Files\CodingSamples</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

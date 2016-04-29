@@ -2,7 +2,6 @@
 #include "BinaryPlay.h"
 #include <string>
 #include <cmath>
-#include "PowerCalculator.h"
 
 BinaryPlay::BinaryPlay()
 {
@@ -42,7 +41,7 @@ unsigned int BinaryPlay::convertBinaryStringToInt(std::string binaryString)
 	for (int i = binaryString.length() - 1; i >= 0; --i)
 	{
 		if (binaryString.at(i) == '1') {
-			intVal += PowerCalculator::powByExponentialBySquaring(2, binaryString.length() - 1 - i);
+			intVal += MyMathCalculator::powByExponentialBySquaring(2, binaryString.length() - 1 - i);
 		}
 	}
 	return intVal;

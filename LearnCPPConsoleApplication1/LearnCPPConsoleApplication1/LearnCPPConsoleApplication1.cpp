@@ -62,6 +62,8 @@ int main()
 	int xBin = 0b1010; // assign binary 0000 1010 to the variable
 
 
+	cout << "Fib 25" << MyMathCalculator::fib(25) << endl;
+
 
 	double heightAfter100 = GravityBallDrop::calcHeightAtTime(3, 100);
 	cout << heightAfter100 << endl;
@@ -82,10 +84,44 @@ int main()
 	typedef std::vector<std::pair<std::string, int> > pairlist_t;
 	using pairlist2_t = std::vector<std::pair<std::string, int> >; // C++11 syntax for typedef
 
-	Employee jimbob{ 2,3,150.25 };
+	Employee jimbob{ 2,3,150.25 }; // struct
 	jimbob.age = 3;
 
 	cout << jimbob.age << "\n";
+
+	{
+		// old random
+
+		using namespace std::chrono;
+		milliseconds ms = duration_cast<milliseconds>(system_clock::now().time_since_epoch());
+		srand(static_cast<unsigned int>(ms.count())); // narrowing long to int
+
+		cout << "Random Numbers seeded from mills since epoch \n";
+		cout << rand() << "\n";
+		cout << rand() << "\n";
+		cout << rand() << "\n";
+		cout << rand() << "\n";
+	}
+
+	{
+		// C++11 Random
+		{
+			// https://en.wikipedia.org/wiki/Mersenne_Twister
+			std::random_device rd; // Use a hardware entropy source if available, otherwise use PRNG
+			std::mt19937 mersenne{ rd() }; // initialize our mersenne twister with a random seed
+
+			// Print a bunch of random numbers
+			for (int count = 0; count < 10; ++count)
+			{
+				std::cout << mersenne() << "\t";
+
+				// If we've printed 4 numbers, start a new row
+				if ((count + 1) % 4 == 0)
+					std::cout << "\n";
+			}
+		}
+
+	}
 
 	return returnZero();
 }
