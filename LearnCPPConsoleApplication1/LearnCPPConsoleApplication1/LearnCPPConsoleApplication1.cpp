@@ -12,6 +12,11 @@ int doubleNumber(int a)
 	return a * 2;
 }
 
+void passByReferencePrinter(int *ptr) {
+	using namespace std;
+	cout << ptr << endl;
+}
+
 int main()
 {
 	using namespace std;
@@ -103,24 +108,68 @@ int main()
 		cout << rand() << "\n";
 	}
 
+
+	// C++11 Random
 	{
-		// C++11 Random
+		// https://en.wikipedia.org/wiki/Mersenne_Twister
+		std::random_device rd; // Use a hardware entropy source if available, otherwise use PRNG
+		std::mt19937 mersenne{ rd() }; // initialize our mersenne twister with a random seed
+
+		// Print a bunch of random numbers
+		for (int count = 0; count < 10; ++count)
 		{
-			// https://en.wikipedia.org/wiki/Mersenne_Twister
-			std::random_device rd; // Use a hardware entropy source if available, otherwise use PRNG
-			std::mt19937 mersenne{ rd() }; // initialize our mersenne twister with a random seed
+			std::cout << mersenne() << "\t";
 
-			// Print a bunch of random numbers
-			for (int count = 0; count < 10; ++count)
-			{
-				std::cout << mersenne() << "\t";
+			// If we've printed 4 numbers, start a new row
+			if ((count + 1) % 4 == 0)
+				std::cout << "\n";
+		}
+	}
 
-				// If we've printed 4 numbers, start a new row
-				if ((count + 1) % 4 == 0)
-					std::cout << "\n";
-			}
+	int firstArray[25]{}; // assign a 25 size array to all 0s
+	int secondArray[]{ 10,20,5,-1,19 };
+	// arrays always pass by reference (pointer) to functions ... and sizeof does not work on the pointer. 
+	MySortUtil::selectionSort(secondArray, 5);
+	cout << secondArray[0] << " " << secondArray[1] << " " << secondArray[2] << " " << secondArray[3] << " " << secondArray[4] << "\n";
+
+	int thirdArray[]{ 10,20,5,-1,19,40,-2,0,50,50,80,1000,2,0 };
+	MySortUtil::bubbleSort(thirdArray, 14);
+	for (int i{ 0 }; i < 14; ++i) {
+		cout << thirdArray[i] << " ";
+	}
+	cout << "\n";
+	cout << &thirdArray[1] << " " << thirdArray[1] << " " << (thirdArray + 1) << " " << *(thirdArray + 1) << endl; // pointer arithmetic to grab the location of the second item in the array by adding 1 to the starting pointer. 
+
+
+	{ // c-style strings
+		// print ascii numbers of a c-style string
+		char myString[] = "string";
+		myString[1] = 'p';
+		std::cout << myString << " has " << sizeof(myString) << " characters.\n";
+		for (int i = 0; i < sizeof(myString); ++i) {
+			std::cout << static_cast<int>(myString[i]) << " ";
 		}
 
+		// std::strcpy && std::strlen are useful utils
+		// strcat() -- Appends one string to another (dangerous)
+		// strncat() --Appends one string to another(with buffer length check)
+		// strcmp() --Compare two strings(returns 0 if equal)
+		// strncmp() --Compare two strings up to a specific number of characters(returns 0 if equal)
+	}
+
+	cout << endl;
+
+	{ // pointer play
+		int x{ 5 };
+		cout << x << " " << &x << " " << *&x << "\n";
+		passByReferencePrinter(&x);
+		int *y = &x; // assign the pointer y (indicated by *) to the memory location of x (indicated by & ... the address-of operator)
+
+		cout << y << " " << *y <<" \n";
+		passByReferencePrinter(y);
+
+		int *np{ 0 }; // this creates a null pointer. 
+		int *np2 = nullptr; // C++11 null pointer.
 	}
 
 	return returnZero();

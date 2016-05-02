@@ -150,6 +150,7 @@
     <ClInclude Include="Constants.h" />
     <ClInclude Include="GravityBallDrop.h" />
     <ClInclude Include="MyMathCalculator.h" />
+    <ClInclude Include="MySortUtil.h" />
     <ClInclude Include="PrimeTest.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
@@ -162,6 +163,7 @@
     <ClCompile Include="GravityBallDrop.cpp" />
     <ClCompile Include="LearnCPPConsoleApplication1.cpp" />
     <ClCompile Include="MyMathCalculator.cpp" />
+    <ClCompile Include="MySortUtil.cpp" />
     <ClCompile Include="PrimeTest.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>

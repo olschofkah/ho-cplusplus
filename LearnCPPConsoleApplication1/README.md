@@ -2,5 +2,5 @@
 
 
 
-Left off @ http://www.learncpp.com/cpp-tutorial/61-arrays-part-i/
+Left off @ http://www.learncpp.com/cpp-tutorial/69-dynamic-memory-allocation-with-new-and-delete/
 

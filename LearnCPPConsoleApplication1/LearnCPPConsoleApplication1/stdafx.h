@@ -17,6 +17,7 @@
 #include <cstdlib> // needed for exit(),  rand() and srand()
 #include <chrono>
 #include <random> // for std::random_device and std::mt19937
+#include <cstring> // utils for handling c-style strings
 
 #include "ZeroReturnHelper.h"
 #include "DataTypeSize.h"
@@ -26,6 +27,7 @@
 #include "BinaryPlay.h"
 #include "Constants.h"
 #include "MyMathCalculator.h"
+#include "MySortUtil.h"
 
 
 int returnZero(); // makes the main compile since it looks in order of function declaration.

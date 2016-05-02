@@ -51,6 +51,9 @@
     <ClInclude Include="MyMathCalculator.h">
       <Filter>Header Files\CoingSamples</Filter>
     </ClInclude>
+    <ClInclude Include="MySortUtil.h">
+      <Filter>Header Files\CoingSamples</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -78,6 +81,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="MyMathCalculator.cpp">
+      <Filter>Source Files\CodingSamples</Filter>
+    </ClCompile>
+    <ClCompile Include="MySortUtil.cpp">
       <Filter>Source Files\CodingSamples</Filter>
     </ClCompile>
   </ItemGroup>
