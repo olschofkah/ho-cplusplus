@@ -18,6 +18,8 @@
 #include <chrono>
 #include <random> // for std::random_device and std::mt19937
 #include <cstring> // utils for handling c-style strings
+#include <array>
+#include <vector>
 
 #include "ZeroReturnHelper.h"
 #include "DataTypeSize.h"

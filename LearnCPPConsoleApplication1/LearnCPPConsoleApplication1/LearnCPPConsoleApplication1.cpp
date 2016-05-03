@@ -90,7 +90,15 @@ int main()
 	using pairlist2_t = std::vector<std::pair<std::string, int> >; // C++11 syntax for typedef
 
 	Employee jimbob{ 2,3,150.25 }; // struct
-	jimbob.age = 3;
+	jimbob.age = 33;
+
+	Employee *bambie = new Employee; // could use {} here to init to default '0''s
+	bambie->age = 18;
+	bambie->wage = 100;
+	(*bambie).id = 2342; // same as '->' ... but not preferred. 
+
+	delete bambie;
+	bambie = nullptr;
 
 	cout << jimbob.age << "\n";
 
@@ -165,11 +173,70 @@ int main()
 		passByReferencePrinter(&x);
 		int *y = &x; // assign the pointer y (indicated by *) to the memory location of x (indicated by & ... the address-of operator)
 
-		cout << y << " " << *y <<" \n";
+		cout << y << " " << *y << " \n";
 		passByReferencePrinter(y);
 
 		int *np{ 0 }; // this creates a null pointer. 
 		int *np2 = nullptr; // C++11 null pointer.
+	}
+
+	{ // dynamic memory
+
+		int *dVal = new int{ 5 };
+
+		void *voidPointer = dVal;
+
+		delete dVal;
+		dVal = nullptr; // best practice to avoid dangling pointers. 
+
+		int *value = new (std::nothrow) int; // ask for an integer's worth of memory
+		if (!value) // handle case where new returned null
+		{
+			std::cout << "Could not allocate memory";
+			exit(1);
+		}
+
+		delete value;
+
+		long double *bigArray = new long double[100000000]{}; // BIG array ... 800+ megs
+
+		string randoIn{};
+		std::getline(cin, randoIn);
+		cout << randoIn << endl;
+
+		delete[] bigArray; // array delete
+		bigArray = nullptr;
+
+
+		// const pointers ... used on function inputs. 
+		int vaz = 5;
+		const int *ptr1 = &vaz; // ptr1 points to a "const int", so this is a pointer to a const value.
+		int *const ptr2 = &vaz; // ptr2 points to an "int", so this is a const pointer to a non-const value.
+
+	}
+
+	// & as reference-of operator to make a reference variable.  It can be a const ... often used on the input of functions. 
+
+	int value = 5; // normal integer
+	int &ref = value; // reference to variable value
+
+	{ // for each
+		for (int a : thirdArray) {
+			// do crap ... standard for each ... but this copies the value over and over
+		}
+
+		for (auto &a : thirdArray) {
+			// do more crap ... easy typing w/ auto and reference-of operator (&) prevents the value from being copied. Const can be used to make immutable-ish. 
+		}
+	}
+
+	{ // std Arrays & Vectors
+		array<int, 6> myFirstArray{ 0,2,4,6,8,10 };
+		auto a = myFirstArray[2];
+		auto b = myFirstArray.at(2); // does bounds checking
+
+		vector<double> myFirstVector{ 1.0,2.0,3.0 };
+
 	}
 
 	return returnZero();
