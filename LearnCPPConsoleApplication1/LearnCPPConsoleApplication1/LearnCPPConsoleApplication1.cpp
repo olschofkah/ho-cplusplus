@@ -17,6 +17,37 @@ void passByReferencePrinter(int *ptr) {
 	cout << ptr << endl;
 }
 
+void addOneByAddress(int *ptr) {
+	*ptr += 1;
+}
+
+void addOneByReference(int &v) {
+	v += 1;
+}
+
+int addOneToACallback(std::function<int()> fn) {
+	return 1 + fn();
+}
+
+// copies here. 
+void addOneByValue(int v = 1) { // uses a default param of 1
+	v += 1;
+}
+
+inline int getOneByValue() { // inline used to compile functions directly inline to the calling code ... often done as performance tweaks by the compiler and not needed.  
+	return 1;
+}
+
+int* getOneByAddress() {
+	return new int{ 1 };
+}
+
+// lose access to these ... memory leak!!!
+int& getOneByReference() {
+	int *one = new int{ 1 };
+	return *one;
+}
+
 int main()
 {
 	using namespace std;
@@ -238,6 +269,60 @@ int main()
 		vector<double> myFirstVector{ 1.0,2.0,3.0 };
 
 	}
+
+	{ // pass by functions
+
+		int val1{ 5 };
+		int *ptr1 = &val1;
+
+		cout << val1 << *ptr1 << endl;
+
+		addOneByValue(val1);
+		// setIntToSixByValue(&val1); does not compile
+		addOneByValue(*ptr1);
+		// setIntToSixByValue(&ptr1); does not compile
+
+		cout << "After pass by value ";
+		cout << val1 << *ptr1 << endl;
+
+		addOneByReference(val1);
+		// addOneByReference(&val1); does not compile
+		addOneByReference(*ptr1);
+		// addOneByReference(&ptr1); does not compile
+
+		cout << "After pass by Reference ";
+		cout << val1 << *ptr1 << endl;
+
+		//addOneByAddress(val1); does not compile
+		addOneByAddress(&val1);
+		addOneByAddress(ptr1);
+		addOneByAddress(&*ptr1);
+
+		cout << "After pass by Address ";
+		cout << val1 << *ptr1 << endl;
+
+		int byValue = getOneByValue();
+		int *byAddress = getOneByAddress();
+		int byReference = getOneByReference();
+
+		int *cleanUpByReference = &byReference;
+
+		cout << byValue << byAddress << byReference << endl;
+
+		delete byAddress;
+		byAddress = nullptr;
+
+	}
+
+	// function pointer ... this is often used as a call back that's passed into the calling function ... or for defining a specific behavior in a generic method (aka sort comparison)
+	int(*fnPtr)() { getOneByValue };
+	cout << fnPtr() << endl;
+
+	// C++11 version of doing this ...
+	std::function<int()> fcnPtr{ getOneByValue };
+	int magic = addOneToACallback(fcnPtr);
+
+	cout << magic << "\n";
 
 	return returnZero();
 }

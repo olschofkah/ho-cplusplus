@@ -20,6 +20,7 @@
 #include <cstring> // utils for handling c-style strings
 #include <array>
 #include <vector>
+#include <functional> // for std::functional function pointers. 
 
 #include "ZeroReturnHelper.h"
 #include "DataTypeSize.h"
