@@ -33,6 +33,9 @@
 #include "MySortUtil.h"
 
 
+#include "HackersDelightUtils.h"
+
+
 int returnZero(); // makes the main compile since it looks in order of function declaration.
 
 struct Employee

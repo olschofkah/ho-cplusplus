@@ -327,6 +327,14 @@ int main()
 	return returnZero();
 }
 
+int main3() {
+
+	using namespace std;
+	auto x = HackersDelightUtils::pop2(56);
+
+	return returnZero();
+}
+
 int returnZero()
 {
 	ZeroReturnHelper zrh{};

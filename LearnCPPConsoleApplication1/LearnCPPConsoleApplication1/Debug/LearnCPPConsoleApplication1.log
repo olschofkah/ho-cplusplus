@@ -1,12 +1,2 @@
-﻿  stdafx.cpp
-  ZeroReturnHelper.cpp
-  PrimeTest.cpp
-  MySortUtil.cpp
-  MyMathCalculator.cpp
-  LearnCPPConsoleApplication1.cpp
-  GravityBallDrop.cpp
-  DataTypeSize.cpp
-  Constants.cpp
-  BinaryPlay.cpp
-  Generating Code...
+﻿  HackersDelightUtils.cpp
   LearnCPPConsoleApplication1.vcxproj -> D:\dev\c++\git\ho-cplusplus\LearnCPPConsoleApplication1\Debug\LearnCPPConsoleApplication1.exe

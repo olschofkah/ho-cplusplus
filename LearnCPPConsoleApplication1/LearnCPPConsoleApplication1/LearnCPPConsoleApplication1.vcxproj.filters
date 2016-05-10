@@ -19,6 +19,12 @@
     <Filter Include="Header Files\CoingSamples">
       <UniqueIdentifier>{855352ef-09e5-42c7-8e07-718abbb25b09}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\HackersDelight2">
+      <UniqueIdentifier>{392073db-34aa-4df2-bfb8-a1d80a91da26}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\HackersDelight2">
+      <UniqueIdentifier>{535af4d0-6d22-4955-8837-cbab139ed92a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -54,6 +60,12 @@
     <ClInclude Include="MySortUtil.h">
       <Filter>Header Files\CoingSamples</Filter>
     </ClInclude>
+    <ClInclude Include="HackersDelightUtils.h">
+      <Filter>Header Files\HackersDelight2</Filter>
+    </ClInclude>
+    <ClInclude Include="Duck.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -85,6 +97,12 @@
     </ClCompile>
     <ClCompile Include="MySortUtil.cpp">
       <Filter>Source Files\CodingSamples</Filter>
+    </ClCompile>
+    <ClCompile Include="HackersDelightUtils.cpp">
+      <Filter>Source Files\HackersDelight2</Filter>
+    </ClCompile>
+    <ClCompile Include="Duck.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

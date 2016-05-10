@@ -149,6 +149,8 @@
     <ClInclude Include="DataTypeSize.h" />
     <ClInclude Include="Constants.h" />
     <ClInclude Include="GravityBallDrop.h" />
+    <ClInclude Include="HackersDelightUtils.h" />
+    <ClInclude Include="Duck.h" />
     <ClInclude Include="MyMathCalculator.h" />
     <ClInclude Include="MySortUtil.h" />
     <ClInclude Include="PrimeTest.h" />
@@ -161,6 +163,8 @@
     <ClCompile Include="Constants.cpp" />
     <ClCompile Include="DataTypeSize.cpp" />
     <ClCompile Include="GravityBallDrop.cpp" />
+    <ClCompile Include="HackersDelightUtils.cpp" />
+    <ClCompile Include="Duck.cpp" />
     <ClCompile Include="LearnCPPConsoleApplication1.cpp" />
     <ClCompile Include="MyMathCalculator.cpp" />
     <ClCompile Include="MySortUtil.cpp" />
