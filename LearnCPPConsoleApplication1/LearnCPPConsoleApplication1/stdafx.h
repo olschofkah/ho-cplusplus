@@ -21,6 +21,7 @@
 #include <array>
 #include <vector>
 #include <functional> // for std::functional function pointers. 
+#include <exception>
 
 #include "ZeroReturnHelper.h"
 #include "DataTypeSize.h"
@@ -31,6 +32,11 @@
 #include "Constants.h"
 #include "MyMathCalculator.h"
 #include "MySortUtil.h"
+
+#include "IFeatheredAnimal.h"
+#include "IEggLayer.h"
+#include "Duck.h"
+#include "Bird.h"
 
 
 #include "HackersDelightUtils.h"

@@ -17,6 +17,11 @@ void passByReferencePrinter(int *ptr) {
 	cout << ptr << endl;
 }
 
+template <typename T> // template for generic programming. class can be used in place of typename. 
+T myMax(T t1, T t2) {
+	return (t2 > t1) ? t2 : t1;
+}
+
 void addOneByAddress(int *ptr) {
 	*ptr += 1;
 }
@@ -314,6 +319,26 @@ int main()
 
 	}
 
+
+	Duck *duck = new Duck(2, 4);
+	duck->talk();
+
+	string *duckName = new string{};
+	duckName->assign("Bob");
+
+
+	Duck *bird = new Bird{};
+	bird->talk(); // virtual function polymorphism
+
+	duck->setName(*duckName);
+	delete duck;
+	delete duckName;
+	delete bird;
+
+	duck = nullptr;
+	duckName = nullptr;
+	bird = nullptr;
+
 	// function pointer ... this is often used as a call back that's passed into the calling function ... or for defining a specific behavior in a generic method (aka sort comparison)
 	int(*fnPtr)() { getOneByValue };
 	cout << fnPtr() << endl;
@@ -324,7 +349,29 @@ int main()
 
 	cout << magic << "\n";
 
-	return returnZero();
+
+
+	int val1{ 3 };
+	int &val2 = val1; // assign a reference to the same variable.  
+	val2 = 10;
+
+	cout << val1 << " " << val2 << endl; // both are 10 here. 
+
+	try {
+		// const char* errMsg{"shit\0"}; good ... but not needed here. 
+		throw std::exception("shit");
+	}
+	catch (std::exception &cException) {
+		cout << cException.what() << endl; // endl flushes in case I forgot. 
+	}
+	catch (int) { // can throw ints in c++;
+
+	}
+	catch (...) { // catch everything left
+		/// eat it. this comment style denotes documentation??? 
+	}
+
+	return		returnZero();
 }
 
 int main3() {

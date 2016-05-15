@@ -146,11 +146,14 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BinaryPlay.h" />
+    <ClInclude Include="Bird.h" />
     <ClInclude Include="DataTypeSize.h" />
     <ClInclude Include="Constants.h" />
     <ClInclude Include="GravityBallDrop.h" />
     <ClInclude Include="HackersDelightUtils.h" />
     <ClInclude Include="Duck.h" />
+    <ClInclude Include="IEggLayer.h" />
+    <ClInclude Include="IFeatheredAnimal.h" />
     <ClInclude Include="MyMathCalculator.h" />
     <ClInclude Include="MySortUtil.h" />
     <ClInclude Include="PrimeTest.h" />
@@ -160,6 +163,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="BinaryPlay.cpp" />
+    <ClCompile Include="Bird.cpp" />
     <ClCompile Include="Constants.cpp" />
     <ClCompile Include="DataTypeSize.cpp" />
     <ClCompile Include="GravityBallDrop.cpp" />
