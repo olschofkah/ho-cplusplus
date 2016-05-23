@@ -34,6 +34,48 @@ int addOneToACallback(std::function<int()> fn) {
 	return 1 + fn();
 }
 
+int multiplyBy13(int x) {
+
+
+	std::cout << BinaryPlay::convertIntToBinaryString(x) << std::endl;
+
+	int t1 = x << 2;
+
+	std::cout << BinaryPlay::convertIntToBinaryString(t1) << std::endl;
+
+	int t2 = x << 3;
+
+
+	std::cout << BinaryPlay::convertIntToBinaryString(t2) << std::endl;
+
+	int result = t1 + t2 + x;
+
+	std::cout << t1 << " " << t2 << " " << result << std::endl;
+
+	return result;
+}
+
+inline int multiplyBy9(int x) {
+	return (x << 3) + x; // 8x + x
+}
+
+int multiply3By51() {
+
+	// 51 base 10 = 110011 base 2
+	int x{ 3 };
+
+	return (x<<5) + (x<<4) + (x<<1) + x; // 32x + 16x + 2x + x = 51x
+}
+
+int multiplyBy28() {
+
+	unsigned int x{ 2 };
+	int t1 = x << 5; // 32x 2^5
+	int t2 = x << 2; //  4x 2^2 
+
+	return t1 - t2;
+}
+
 // copies here. 
 void addOneByValue(int v = 1) { // uses a default param of 1
 	v += 1;
@@ -370,6 +412,40 @@ int main()
 	catch (...) { // catch everything left
 		/// eat it. this comment style denotes documentation??? 
 	}
+
+	multiplyBy13(3);
+
+	int x9 = multiply3By51();
+
+	cout << x9 << endl;
+
+	const int m{ 23 };
+	int tmp{ 0 };
+	int tmp2{ 0 };
+
+	using namespace std::chrono;
+	milliseconds ms = duration_cast<milliseconds>(system_clock::now().time_since_epoch());
+
+	for (int i = 0; i < 1000000; i++) { 
+		tmp += m * 8; // this is actually faster ... at least on this computer
+	}
+
+	milliseconds ms2 = duration_cast<milliseconds>(system_clock::now().time_since_epoch());
+
+	for (int i = 0; i < 1000000; i++) {
+		tmp2 += (m << 3);
+	}
+
+	cout << tmp << endl;
+	cout << tmp2 << endl;
+
+	milliseconds ms3 = duration_cast<milliseconds>(system_clock::now().time_since_epoch());
+
+	milliseconds delta1 = ms2 - ms;
+	milliseconds delta2 = ms3 - ms2;
+
+	cout << delta1.count() << endl;
+	cout << delta2.count() << endl;
 
 	return		returnZero();
 }
